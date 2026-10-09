@@ -165,7 +165,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_bluedroid_enable());
 
     ESP_ERROR_CHECK(esp_bt_gap_register_callback(bt_gap_cb));
-    ESP_ERROR_CHECK(esp_bt_gap_set_device_name("FNK0047 Bluetooth Speaker"));
+    ESP_ERROR_CHECK(esp_bt_gap_set_device_name("Loud!Com"));
     ESP_ERROR_CHECK(esp_bt_gap_set_scan_mode(
         ESP_BT_CONNECTABLE, ESP_BT_GENERAL_DISCOVERABLE));
 
@@ -178,7 +178,7 @@ void app_main(void)
         ESP_LOGI(TAG, "Bluetooth speaker ready; address %02X:%02X:%02X:%02X:%02X:%02X",
                  mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
     }
-    ESP_LOGI(TAG, "On Chromebook, open Bluetooth settings and pair with: FNK0047 Bluetooth Speaker");
+    ESP_LOGI(TAG, "On Chromebook, open Bluetooth settings and pair with: Loud!Com");
 
     while (true) {
         vTaskDelay(pdMS_TO_TICKS(1000));
