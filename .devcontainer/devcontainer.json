@@ -1,0 +1,18 @@
+{
+  "name": "ESP-IDF Bluetooth Speaker",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "postCreateCommand": "bash -lc 'if [ ! -d /opt/esp/idf ]; then git clone --depth 1 --branch v5.2.3 --recursive https://github.com/espressif/esp-idf.git /opt/esp/idf && /opt/esp/idf/install.sh esp32; fi'",
+  "remoteEnv": {
+    "IDF_PATH": "/opt/esp/idf"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "espressif.esp-idf-extension"
+      ]
+    }
+  }
+}
