@@ -16,9 +16,8 @@
 
 static const char *TAG = "BT_SPEAKER";
 
-/* FNK0047 PCM5102A V1.5: SCK/MCLK=0, BCK=26, DIN=25, LCK/WS=27. */
+/* FNK0047 PCM5102A V1.5: leave SCK/MCLK disconnected for this test; BCK=26, DIN=25, LCK/WS=27. */
 #define I2S_PORT       I2S_NUM_0
-#define I2S_MCLK_PIN   GPIO_NUM_0
 #define I2S_BCLK_PIN   GPIO_NUM_26
 #define I2S_DOUT_PIN   GPIO_NUM_25
 #define I2S_LRCK_PIN   GPIO_NUM_27
@@ -54,7 +53,7 @@ static esp_err_t audio_i2s_init(uint32_t sample_rate)
     }
 
     const i2s_pin_config_t pins = {
-        .mck_io_num = I2S_MCLK_PIN,
+        .mck_io_num = I2S_PIN_NO_CHANGE,
         .bck_io_num = I2S_BCLK_PIN,
         .ws_io_num = I2S_LRCK_PIN,
         .data_out_num = I2S_DOUT_PIN,
